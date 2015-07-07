@@ -1,0 +1,68 @@
+﻿@using System.Globalization
+@using System.Web.UI.HtmlControls
+@model LODS.LabClients.MVCSample.Models.HistoricalLabInstanceCollection
+
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Report</h2>
+
+<div class="row">
+    @using (Html.BeginForm()) {
+        <fieldset>
+            <legend>Report dates (7 day range maximum)</legend>
+            <div class="col-md-4">
+                <label for="StartDate">Start date: </label><input type="datetime" id="StartDate" name="StartDate" />
+            </div>
+            <div class="col-md-4">
+                <label for="EndDate">End date: </label><input type="datetime" id="EndDate" name="EndDate" />
+            </div>
+            <div class="col-md-4">
+                <input type="submit" value="Get report" class="btn btn-default" />
+            </div>
+        </fieldset>
+    }
+</div>
+
+<table class="table">
+
+    <tr>
+        <th>Lab Title</th>
+        <th>Instance ID</th>
+        <th>User Id</th>
+        <th>Start (UTC)</th>
+        <th>End (UTC)</th>
+        <th>Status</th>
+    </tr>
+
+    <!-- for the date display stuff - cf. http://stackoverflow.com/questions/19401426/changing-the-utc-date-to-local-date-using-moment-js to
+         get the time recognized as UTC, and http://stackoverflow.com/questions/28842881/using-moment-js-to-format-viewmodel-dates-in-asp-net-mvc
+         to get it into the display -->
+    @foreach (var item in Model) {
+        <tr>
+            <td>@item.TitleString</td>
+            <td>@item.InstanceId</td>
+            <td>@item.UserId</td>
+            <td data-utcdate="@item.StartUtc.ToString("s", CultureInfo.InvariantCulture)+00:00"></td>
+            @if (item.EndUtc == DateTime.MinValue) {
+                <td>&nbsp;</td>
+            } else {
+                <td data-utcdate="@item.EndUtc.ToString("s", CultureInfo.InvariantCulture)+00:00"></td>
+            }
+            <td>@item.CompletionStatus</td>
+        </tr>
+    }
+
+</table>
+
+<!-- locating the script here is sloppy but for demo code it's probably fine -->
+<script type="text/javascript">
+    $(function () {
+        $('[data-utcdate]').each(function () {
+            var d = moment($(this).attr('data-utcdate')).local();
+            $(this).text(d.format("llll"));
+        });
+    });
+</script>

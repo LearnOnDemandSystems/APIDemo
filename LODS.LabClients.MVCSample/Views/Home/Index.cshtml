@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Labs</h1>
+    <p class="lead">What labs would you like to see?</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>All available labs</h2>
+        <p>
+            @Html.ActionLink("View available labs", "Available", "Lab", null, new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Saved lab instances</h2>
+        <p>
+            @Html.ActionLink("View saved labs", "Saved", "Lab", null, new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Report</h2>
+        <p>
+            @Html.ActionLink("View lab report", "Report", "Lab", null, new { @class = "btn btn-default" })
+        </p>
+    </div>
+</div>

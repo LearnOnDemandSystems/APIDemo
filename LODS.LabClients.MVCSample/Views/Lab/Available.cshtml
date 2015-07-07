@@ -1,0 +1,20 @@
+﻿@model LODS.LabClients.MVCSample.Models.AvailableLabViewModelCollection
+@{
+    ViewBag.Title = "Available Labs";
+}
+
+<div class="jumbotron">
+    <h1>@ViewBag.Title</h1>
+    <p class="lead">Labs available for you to launch</p>
+</div>
+
+@foreach (var labSeries in Model.Keys) {
+    <h3>Lab Series: @labSeries.Name</h3>
+    <p>@labSeries.Description</p>
+    <dl>
+        @foreach (var labInSeries in Model[labSeries]) {
+            <dt>@Html.ActionLink(labInSeries.TitleString, "Index", new { id = labInSeries.Id }, new { target = "_blank"})</dt>
+            <dd>@labInSeries.Description</dd>
+        }
+    </dl>
+}

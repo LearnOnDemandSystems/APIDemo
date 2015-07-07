@@ -1,0 +1,23 @@
+﻿@model LODS.LabClients.MVCSample.Models.SavedLabViewModelCollection
+@{
+    ViewBag.Title = "Saved Lab Instances";
+}
+
+<div class="jumbotron">
+    <h1>@ViewBag.Title</h1>
+    <p class="lead">Labs you have saved that you can resume</p>
+</div>
+
+<h4>Any labs which are not available to resume are not listed here.</h4>
+
+<dl>
+    @foreach (var savedLab in Model.Where(l => l.Available)) {
+        <dt>
+            @Html.ActionLink(savedLab.TitleString, "Resume", new { id = savedLab.InstanceId }, new { target = "_blank" })
+        </dt>
+        <dd>@savedLab.MinutesRemaining minutes remaining in this instance</dd>
+        <dd>Last saved at @savedLab.SavedUtc; will expire at @savedLab.ExpiresUtc</dd>
+        <dd>@savedLab.Description</dd>
+    }
+</dl>
+
