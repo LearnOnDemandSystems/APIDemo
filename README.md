@@ -1,2 +1,2 @@
 # APIDemo
-Demonstration code for the LOD API
+Demonstration code for the public Learn on Demand .NET API package, available in nuget.
