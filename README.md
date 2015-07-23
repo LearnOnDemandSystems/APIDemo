@@ -24,6 +24,6 @@ identifiers.
 
 This project will not build unless you have the SharePoint
 2013 development support installed for Visual Studio and you have a local
-SharePoint installation (a requirement for SharePoint development).  You will
+SharePoint installation (a requirement for SharePoint development.)  You will
 also need to add your own `key.snk` file for .NET strong-named signing (a
 standard SharePoint requirement.)
