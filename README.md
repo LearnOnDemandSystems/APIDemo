@@ -27,3 +27,11 @@ This project will not build unless you have the SharePoint
 SharePoint installation (a requirement for SharePoint development.)  You will
 also need to add your own `key.snk` file for .NET strong-named signing (a
 standard SharePoint requirement.)
+
+# Support and License Statement
+
+This code is not supported in any way.  It is not presented as complete
+production code but is instead meant to act as sample reference code only.
+You should verify the code yourself including validating the security
+of the code.  Code based on this code may be used in any project targeting
+the LOD API, including commercial and closed-source projects.
