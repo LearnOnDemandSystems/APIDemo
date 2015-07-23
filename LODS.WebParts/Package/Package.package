@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="35c2e974-25af-4936-8e31-d34dc8cd01fb" solutionId="35c2e974-25af-4936-8e31-d34dc8cd01fb" resetWebServer="false" sharePointProductVersion="15.0" name="LODS.WebParts" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="LODS.SharePoint.ContentManagement.DataTypes.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\LODS.DataTypes\LODS.DataTypes.csproj" />
+  </assemblies>
+  <features>
+    <featureReference itemId="c2014e94-7419-49c1-9b97-eaf19cf56064" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="0d32164f-6682-43a9-8a4f-ab547f4c9a6d" />
+  </projectItems>
+</package>

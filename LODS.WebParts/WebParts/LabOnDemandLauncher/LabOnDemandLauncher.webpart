@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LODS.SharePoint.ContentManagement.WebParts.LabOnDemandLauncher.LabOnDemandLauncher, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Simple Lab Launcher</property>
+        <property name="Description" type="string">A basic lab launcher web part with basic launch access only.</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

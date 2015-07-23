@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="LabOnDemandLauncher" List="113" Url="_catalogs/wp">
+    <File Path="LabOnDemandLauncher\LabOnDemandLauncher.webpart" Url="LODS.WebParts_LabOnDemandLauncher.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="Learn on Demand Systems" />
+    </File>
+  </Module>
+</Elements>
